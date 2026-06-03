@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Collapse & Accordion Workshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8fafc;
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body class="pb-5">
+
+    <div class="container py-5">
+        <header class="text-center mb-5 pb-3 border-bottom">
+            <h1 class="fw-bold text-dark">Bootstrap 5 Disclosure Components</h1>
+            <p class="text-muted text-uppercase small tracking-wider">Solutions for Sections 18 and 19 Assignment Sheets</p>
+        </header>
+
+        <section class="content-card">
+            <h2 class="h4 text-primary border-bottom pb-2 mb-4">18. Collapse Utility Module</h2>
+            <p class="text-muted small mb-4">
+                Clicking the action button triggers smooth height transitions on the target card content block via matching id references (<code>data-bs-target="#collapseBlock"</code>).
+            </p>
+
+            <button class="btn btn-primary px-4 fw-bold mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBlock" aria-expanded="false" aria-controls="collapseBlock">
+                Toggle Hidden Framework Data
+            </button>
+
+            <div class="collapse" id="collapseBlock">
+                <div class="card card-body bg-light border-secondary-subtle text-secondary">
+                    <h5 class="fw-bold text-dark mb-2">Hidden Diagnostic Logs Active</h5>
+                    <p class="m-0 small">The collapse plugin allows you to toggle visibility on elements smoothly by animating max-height values under the hood. It's built cleanly without writing explicit Javascript execution handlers.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="content-card">
+            <h2 class="h4 text-success border-bottom pb-2 mb-4">19. Mutually Exclusive Accordion List</h2>
+            <p class="text-muted small mb-4">
+                By setting the <code>data-bs-parent</code> query selector constraint option, opening one accordion item causes its sibling content cards to snap shut automatically.
+            </p>
+
+            <div class="accordion shadow-sm" id="assignmentAccordion">
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Module Node #1: Framework Strategy
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body text-secondary small">
+                            <strong>This item opens by default.</strong> The utility layout uses the class modifier <code>.show</code> on initialization to render content space early. Try opening Item #2 to watch this area automatically animate closed.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Module Node #2: Database Handshake Routines
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body text-secondary small">
+                            <strong>This component handles fluid layout rendering matrix updates.</strong> When user event inputs activate this panel container block, it safely coordinates structural grid data alignments instantly down stream.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Module Node #3: UI Styling System Cleanups
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body text-secondary small">
+                            <strong>Final execution loop checklist criteria.</strong> Clears structural floats, checks breakpoint widths, removes redundant custom style classes, and enforces uniform font utility rendering.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

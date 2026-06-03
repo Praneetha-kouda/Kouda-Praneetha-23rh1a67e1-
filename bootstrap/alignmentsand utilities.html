@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Alignment, Reordering & Flexbox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        body {
+            background-color: #f1f5f9;
+            padding-bottom: 5rem;
+        }
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-top: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .demo-row-tall {
+            height: 200px;
+            background-color: #e2e8f0;
+            border: 2px dashed #94a3b8;
+            border-radius: 0.5rem;
+        }
+        .demo-box {
+            background-color: #3b82f6;
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            font-weight: bold;
+            border-radius: 0.375rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .box-orange { background-color: #f97316; }
+        .box-purple { background-color: #8b5cf6; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="my-5 text-center">
+            <h1 class="fw-bold text-dark">Advanced Grid & Flexbox</h1>
+            <p class="text-muted">Solutions for Alignment, Column Reordering, and Responsive Flex Utilities</p>
+        </header>
+
+        <div class="section-card">
+            <h2 class="h4 text-primary mb-4"></h2> Alignment and Reordering in Grid</h2>
+            
+            <div class="mb-5">
+                <h5 class="text-secondary mb-3"> Perfect Row Centering (Horizontal & Vertical)</h5>
+                <p class="small text-muted">The inner column is completely centered inside a 200px tall custom container boundary via <code>justify-content-center align-items-center</code>.</p>
+                
+                <div class="row justify-content-center align-items-center demo-row-tallg-0">
+                    <div class="col-auto">
+                        <div class="demo-box">
+                            Centered Content Box
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="text-secondary mb-3"> Responsive Column Reordering</h5>
+                <p class="small text-muted">On mobile screens, <strong>Orange (Box 1)</strong> displays first. On medium tablet screens and wider (≥768px), the order swaps to make <strong>Purple (Box 2)</strong> show up first using <code>order-md-2</code> and <code>order-md-1</code>.</p>
+                
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 order-md-2">
+                        <div class="demo-box box-orange">
+                            <div>Orange Content (Box 1)</div>
+                            <code class="text-white small">Default Mobile Order 1st &rarr; order-md-2</code>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-1">
+                        <div class="demo-box box-purple">
+                            <div>Purple Content (Box 2)</div>
+                            <code class="text-white small">Default Mobile Order 2nd &rarr; order-md-1</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="h4 text-primary mb-4">Responsive Flexbox Utilities</h2>
+            
+            <div class="mb-5">
+                <h5 class="text-secondary mb-3"> Responsive Navbar (Vertical Mobile &rarr; Horizontal Tablet+)</h5>
+                <p class="small text-muted">Uses <code>d-flex flex-column flex-md-row</code> to cleanly stack links vertically on mobile viewports, expanding smoothly into a side-by-side bar on larger displays.</p>
+                
+                <nav class="d-flex flex-column flex-md-row align-items-center p-3 bg-dark text-white rounded-3 shadow-sm">
+                    <a class="navbar-brand text-warning fw-bold mb-2 mb-md-0 me-md-auto" href="#">CommunityPortal</a>
+                    <div class="d-flex flex-column flex-md-row gap-2 w-100 w-md-auto text-center">
+                        <a href="#" class="btn btn-outline-light btn-sm">Home</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Live Events</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Schedules</a>
+                    </div>
+                </nav>
+            </div>
+
+            <div>
+                <h5 class="text-secondary mb-3">Card Header Layout with Flex Alignment</h5>
+                <p class="small text-muted">The internal elements are pushed cleanly to opposite sides horizontally while being locked perfectly to the vertical midpoint using <code>justify-content-between align-items-center</code>.</p>
+                
+                <div class="card border-primary">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-light">
+                        <h6 class="m-0 fw-bold text-dark text-uppercase tracking-wide">Featured Workshop Event</h6>
+                        <span class="badge bg-danger">Seats Left: 5</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Responsive CSS3 Engine Tuning</h5>
+                        <p class="card-text text-muted">Learn to orchestrate fluid alignment patterns across modern application frameworks cleanly without breakages.</p>
+                        <a href="#" class="btn btn-primary btn-sm">Secure Ticket Slot</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
