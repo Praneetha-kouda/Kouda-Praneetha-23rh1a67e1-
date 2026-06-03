@@ -1,0 +1,114 @@
+/* Base Document Configuration */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+}
+
+section {
+    background: #ffffff;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ==========================================================================
+   1. BOX MODEL PROPERTIES TASK (.eventCard)
+   ========================================================================== */
+.events-container {
+    display: flex;
+    gap: 20px;
+}
+
+.eventCard {
+    /* Set box dimensions explicitly to track easier inside Browser DevTools */
+    flex: 1;
+    
+    /* TASK: Add border, padding, and margin to .eventCard */
+    margin: 15px;               /* Exterior spacing away from adjacent cards */
+    padding: 20px;              /* Internal spacing separating content from border boundary */
+    border: 3px solid #2563eb;  /* Clear, solid block border to mark box edges */
+    
+    background-color: #f8fafc;
+    border-radius: 6px;
+    
+    /* Keeps dimensions predictable by including padding/borders in width sizing */
+    box-sizing: border-box; 
+}
+
+.eventCard h3 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+
+/* ==========================================================================
+   2. OUTLINE FOR SELECTED FIELDS TASK
+   ========================================================================== */
+.registration-form .form-group {
+    margin-bottom: 15px;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registration-form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 14px;
+    
+    /* Standard default focus styles are removed to define custom behavior instead */
+    outline: none; 
+}
+
+/* TASK: Add outline to highlight selected fields in a form */
+.registration-form input:focus {
+    /* Outlines sit outside border limits and do not alter document flow measurements */
+    outline: 4px solid #f59e0b; 
+    outline-offset: 2px; /* Slight structural offset to prevent edge overlap */
+    border-color: #d97706;
+}
+
+
+/* ==========================================================================
+   3. VISIBILITY: HIDDEN VS. DISPLAY: NONE TASK
+   ========================================================================== */
+.box-row {
+    display: flex;
+    background: #e5e7eb;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.box {
+    padding: 15px 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+}
+
+.static-box {
+    background-color: #4b5563;
+}
+
+/* TASK COMPARISON CASE A: Element is invisible, but still consumes layout space */
+.hidden-box {
+    background-color: #dc2626;
+    visibility: hidden; 
+}
+
+/* TASK COMPARISON CASE B: Element is completely dropped from the rendering tree */
+.none-box {
+    background-color: #dc2626;
+    display: none; 
+}

@@ -1,0 +1,67 @@
+/* Layout Presentation Wrapper */
+body {
+    font-family: 'Georgia', serif; /* Classic newspaper style font */
+    background-color: #fcfbf7;
+    color: #222222;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.bulletin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #e2e2e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.bulletin-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.bulletin-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin: 0 0 5px 0;
+}
+
+.meta-data {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+hr {
+    border: 0;
+    border-top: 2px double #333;
+    margin-top: 10px;
+}
+
+.news-article h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   CSS3 MULTI-COLUMN LAYOUT TASK
+   ========================================================================== */
+.news-article {
+    /* Task: Splits the content inside the section into exactly 2 columns */
+    column-count: 2;
+    
+    /* Task: Adds 30px of horizontal breathing room between the columns */
+    column-gap: 30px;
+    
+    /* Task: Draws a 1px solid gray vertical dividing line between columns */
+    column-rule: 1px solid gray;
+    
+    /* Optional: Provides clean visual alignment along both column edges */
+    text-align: justify; 
+    line-height: 1.6;
+}

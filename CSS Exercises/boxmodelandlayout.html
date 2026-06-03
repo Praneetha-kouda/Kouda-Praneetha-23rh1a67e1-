@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model & Layout Control</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+
+    <section class="events-section">
+        <h2>Upcoming Events</h2>
+        <div class="events-container">
+            
+            <div class="eventCard">
+                <h3>Tech Conference 2026</h3>
+                <p>Join us for an immersive day discussing emerging trends in software development frameworks.</p>
+                <button type="button">Register Now</button>
+            </div>
+
+            <div class="eventCard">
+                <h3>UI/UX Design Sprint</h3>
+                <p>Learn tips and practical workflows to optimize layout sizing, accessibility, and user flows.</p>
+                <button type="button">Register Now</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Event Registration Form</h2>
+        <form class="registration-form">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="emailAddr">Email Address:</label>
+                <input type="email" id="emailAddr" placeholder="name@example.com">
+            </div>
+        </form>
+    </section>
+
+    <section class="comparison-section">
+        <h2>Visibility: Hidden vs. Display: None</h2>
+        <p>Observe how space behaves under different layout controls:</p>
+        
+        <div class="box-row">
+            <div class="box static-box">Box 1 (Normal)</div>
+            <div class="box hidden-box">Box 2 (visibility: hidden)</div>
+            <div class="box static-box">Box 3 (Normal)</div>
+        </div>
+
+        <div class="box-row">
+            <div class="box static-box">Box 1 (Normal)</div>
+            <div class="box none-box">Box 2 (display: none)</div>
+            <div class="box static-box">Box 3 (Normal)</div>
+        </div>
+    </section>
+
+</body>
+</html>
