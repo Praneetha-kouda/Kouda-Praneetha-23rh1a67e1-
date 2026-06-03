@@ -1,0 +1,140 @@
+/* ==========================================================================
+   1. BASE DESKTOP STYLES (Default layout)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    color: #333;
+}
+
+/* Base Navigation Layout (Horizontal via Flexbox) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 1rem 5%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    /* Bonus Task: Utilizing Flexbox for layouts */
+    display: flex; 
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1.1rem; /* Base Desktop font size */
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Core Main Section (Flexible layout units task) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+    
+    /* Task: Use % and vh for flexible sizing elements */
+    min-height: 70vh; /* Element scales dynamically to cover 70% of viewport height */
+    width: 100%;       /* Fluid width spanning the container */
+    gap: 40px;
+}
+
+.hero-content {
+    /* Task: Use % for structural block widths */
+    width: 45%; 
+}
+
+/* Task: Base typography scaling on viewport width for fluid text */
+.hero-content h1 {
+    font-size: 2.8rem; 
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #475569;
+}
+
+/* Task: Flexible Image Sizing Handler */
+.hero-image-wrapper {
+    width: 50%; 
+}
+
+.responsive-img {
+    /* Task: Reduce image sizes fluidly based on container room */
+    width: 100%;       /* Image scales smoothly up or down relative to its parent container width */
+    max-width: 550px;  /* Prevents image pixelation on extra wide screens */
+    height: auto;      /* Preserves original aspect ratio to avoid distortion */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* ==========================================================================
+   2. RESPONSIVE WEB DESIGN BREAKPOINT
+   Task: Add a media query for screens smaller than 768px
+   ========================================================================== */
+@media (max-width: 767px) {
+    
+    /* Change the main webpage rhythm from side-by-side rows into stacked columns */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        min-height: auto; /* Allow layout heights to flow naturally with content on small viewports */
+    }
+
+    /* Task: Stack navigation links vertically instead of horizontally */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Switches flex direction axis to vertical stack */
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    /* Task: Reduce structural elements to full fluid width on mobile screens */
+    .hero-content, 
+    .hero-image-wrapper {
+        width: 100%; 
+    }
+
+    /* Task: Reduce font sizes dynamically inside the media query block */
+    .hero-content h1 {
+        font-size: 1.8rem; /* Scaled down from desktop's 2.8rem */
+    }
+
+    .hero-content p {
+        font-size: 1rem;   /* Scaled down from desktop's 1.2rem */
+    }
+
+    .nav-links a {
+        font-size: 1rem;   /* Clean touch tap target adjustments */
+    }
+}

@@ -1,0 +1,79 @@
+/* ==========================================================================
+   1. LINK STYLING (Task: :link, :hover, :active, :visited pseudo-classes)
+   ========================================================================== */
+
+/* Unvisited link */
+a:link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Visited link */
+a:visited {
+    color: #601e88;
+}
+
+/* Mouse over link */
+a:hover {
+    color: #e03131;
+    text-decoration: underline;
+}
+
+/* Selected/Clicked link */
+a:active {
+    color: #f08c00;
+}
+
+
+/* ==========================================================================
+   2. NAV MENU STYLING (Task: Remove bullets from nav menus)
+   ========================================================================== */
+.nav-menu ul {
+    list-style-type: none; /* Removes the default bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;         /* Optional: Displays menu items horizontally */
+    background-color: #333;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a:link, 
+.nav-menu a:visited {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+}
+
+.nav-menu a:hover {
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   3. CONTENT LIST STYLING (Task: list-style-type, list-style-position, padding/margin)
+   ========================================================================== */
+.custom-list {
+    /* Changes default round bullets to square blocks */
+    list-style-type: square; 
+    
+    /* Sets the bullet alignment inside the list item block box */
+    list-style-position: inside; 
+    
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.custom-list li {
+    /* Task: Add padding and margin to list items for spacing */
+    margin-bottom: 12px;  /* Adds vertical spacing between individual list items */
+    padding: 8px 12px;    /* Adds internal breathing room inside each list item box */
+    background-color: #f8f9fa; /* Optional: Added to make padding visually clear */
+    border-radius: 4px;
+}

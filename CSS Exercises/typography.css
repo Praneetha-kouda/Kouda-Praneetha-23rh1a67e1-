@@ -1,0 +1,38 @@
+/* Apply Google Font to entire page */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+}
+
+/* Main heading */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #003366;
+}
+
+/* Section headings */
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    color: #0056b3;
+}
+
+/* Description text */
+.description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: justify;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+/* Event section */
+.event {
+    margin-bottom: 25px;
+}

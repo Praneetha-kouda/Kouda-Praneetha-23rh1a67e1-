@@ -1,0 +1,38 @@
+/* Base Layout Setup */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.debug-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   THE BREAKING RESPONSIVE BUG (Task 1 & Task 2 target)
+   ========================================================================== */
+.broken-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #dc2626; /* Marked red to show a warning box */
+
+    /* BUG CAUSE: This explicit pixel width structure prevents the card from 
+       shrinking horizontally on small mobile devices, causing page overflow.
+    */
+    width: 650px; 
+}
+
+.broken-card h2 {
+    color: #dc2626;
+    margin-top: 0;
+}
