@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+
+        output {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<form onsubmit="showMsg(); return false;">
+
+    <input type="text" placeholder="Enter Name" required autofocus>
+
+    <input type="email" placeholder="Enter Email" required>
+
+    <input type="date" required>
+
+    <select required>
+        <option value="">Select Event</option>
+        <option>Workshop</option>
+        <option>Seminar</option>
+    </select>
+
+    <textarea placeholder="Message"></textarea>
+
+    <button type="submit">Register</button>
+
+    <output id="msg"></output>
+
+</form>
+
+<script>
+    function showMsg() {
+        document.getElementById("msg").value =
+        "Registration Successful!";
+    }
+</script>
+
+</body>
+</html>
