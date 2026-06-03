@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Dashboard: Components Lab</title>
+    <link rel="stylesheet" href="structureandfiles.css">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="logo">AdminPortal</div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#events">Live Events</a></li>
+                <li><a href="#registrations">Registrations</a></li>
+                <li><a href="#archived" class="disabled-link">Archived Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-content">
+        
+        <section class="events-section">
+            <h2>Active Event Modules</h2>
+            
+            <div class="eventCard">
+                <h3>Global Tech Summit 2026</h3>
+                <p>Location: Hall A · Status: <span class="badge active-badge">Live</span></p>
+                <p>Managing the core track schedules, speaker queues, and international developer panel setups.</p>
+            </div>
+
+            <div class="eventCard">
+                <h3>Acoustic Rooftop Sessions</h3>
+                <p>Location: Terrace · Status: <span class="badge active-badge">Live</span></p>
+                <p>Catering setup, ticket processing, ambient lighting configurations, and live stream routing controls.</p>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h2>Events Administration Log</h2>
+            <table class="events-table">
+                <thead>
+                    <tr>
+                        <th>Event ID</th>
+                        <th>Module Coordinator</th>
+                        <th>Registered Attendance</th>
+                        <th>Room Assignment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#E-1082</td>
+                        <td>Alice Vance</td>
+                        <td>142 / 150</td>
+                        <td>Auditorium 2</td>
+                    </tr>
+                    <tr>
+                        <td>#E-1083</td>
+                        <td>Marcus Brody</td>
+                        <td>45 / 60</td>
+                        <td>Conference Room C</td>
+                    </tr>
+                    <tr>
+                        <td>#E-1084</td>
+                        <td>Elena Rostova</td>
+                        <td>112 / 120</td>
+                        <td>Main Exhibition Arena</td>
+                    </tr>
+                    <tr>
+                        <td>#E-1085</td>
+                        <td>Devon Lane</td>
+                        <td>28 / 30</td>
+                        <td>Lab Suite 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="form-section">
+            <h2>Quick Register Addendum</h2>
+            <form class="admin-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="eventName">New Event Title:</label>
+                    <input type="text" id="eventName" placeholder="e.g., UI/UX Design Workshop">
+                </div>
+                <div class="form-group">
+                    <label for="coordinatorEmail">Coordinator Email Address:</label>
+                    <input type="email" id="coordinatorEmail" placeholder="coordinator@portal.com">
+                </div>
+            </form>
+        </section>
+
+        <section class="visibility-demo-section">
+            <h2>Layout Mode Test Sandbox (DevTools Comparison)</h2>
+            <p>Inspect the space beneath this paragraph inside your browser's Developer Tools element tree:</p>
+            
+            <div class="demo-wrapper">
+                <div class="box box-normal">Normal Reference Box</div>
+                
+                <div class="box box-hidden">Visibility: Hidden Box</div>
+                
+                <div class="box box-normal">Normal Reference Box</div>
+                
+                <div class="box box-none">Display: None Box</div>
+                
+                <div class="box box-normal">Normal Reference Box</div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
