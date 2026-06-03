@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving User Preferences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #e60000;
+        }
+        .status-msg {
+            margin-top: 15px;
+            font-size: 14px;
+            color: green;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Event Preferences</h2>
+    
+    <label for="eventType">Select Preferred Event Type:</label>
+    <select id="eventType">
+        <option value="">-- Choose an Event --</option>
+        <option value="music">Music & Concerts</option>
+        <option value="tech">Tech Conferences</option>
+        <option value="sports">Sports & Fitness</option>
+        <option value="arts">Arts & Theatre</option>
+    </select>
+
+    <button id="clearBtn">Clear Preferences</button>
+    
+    <div id="status" class="status-msg"></div>
+</div>
+
+<script>
+    const eventTypeSelect = document.getElementById('eventType');
+    const clearBtn = document.getElementById('clearBtn');
+    const statusMsg = document.getElementById('status');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedPreference = localStorage.getItem('preferredEventType');
+        
+        if (savedPreference) {
+            eventTypeSelect.value = savedPreference;
+            statusMsg.textContent = `Loaded preference: "${savedPreference}" from localStorage.`;
+        }
+
+        sessionStorage.setItem('sessionTimestamp', Date.now());
+    });
+
+    eventTypeSelect.addEventListener('change', (e) => {
+        const selectedValue = e.target.value;
+        if (selectedValue) {
+            localStorage.setItem('preferredEventType', selectedValue);
+            statusMsg.textContent = `Preference saved: "${selectedValue}"`;
+            statusMsg.style.color = "green";
+        } else {
+            localStorage.removeItem('preferredEventType');
+            statusMsg.textContent = "";
+        }
+    });
+
+    clearBtn.addEventListener('click', () => {
+        localStorage.clear();
+        sessionStorage.clear();
+
+        eventTypeSelect.value = "";
+
+        statusMsg.textContent = "All storage (Local & Session) cleared successfully!";
+        statusMsg.style.color = "red";
+    });
+</script>
+
+</body>
+</html>

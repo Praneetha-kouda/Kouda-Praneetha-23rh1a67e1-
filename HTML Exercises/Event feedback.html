@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling</title>
+
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script>
+        function validatePhone() {
+            let phone = document.getElementById("phone").value;
+            if (phone.length != 10) {
+                alert("Enter valid phone number");
+            }
+        }
+
+        function showFee() {
+            let fee = document.getElementById("event").value;
+            document.getElementById("fee").innerHTML = "Fee: " + fee;
+        }
+
+        function submitForm() {
+            alert("Form Submitted");
+        }
+
+        function enlarge(img) {
+            img.style.width = "200px";
+            img.style.height = "200px";
+        }
+
+        function countChar() {
+            let text = document.getElementById("feedback").value;
+            document.getElementById("count").innerHTML =
+            "Characters: " + text.length;
+        }
+    </script>
+</head>
+
+<body>
+
+    Phone:
+    <input type="text" id="phone" onblur="validatePhone()"><br><br>
+
+    Event:
+    <select id="event" onchange="showFee()">
+        <option value="100">Workshop</option>
+        <option value="200">Seminar</option>
+    </select>
+
+    <p id="fee"></p>
+
+    <button onclick="submitForm()">Submit</button><br><br>
+
+    <img src="https://via.placeholder.com/100"
+         ondblclick="enlarge(this)"><br><br>
+
+    <textarea id="feedback" onkeyup="countChar()"></textarea>
+
+    <p id="count">Characters: 0</p>
+
+</body>
+</html>

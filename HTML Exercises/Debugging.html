@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging with Chrome DevTools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .broken-layout-box {
+            background-color: #ffcccc;
+            color: #333;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid red;
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .counter-display {
+            font-size: 24px;
+            margin-top: 15px;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>DevTools Debugging Lab</h2>
+    
+    <div class="broken-layout-box" id="layoutBox">
+        Task 1: Right-click this box, choose "Inspect", and use the Styles panel to change its background color or padding live.
+    </div>
+
+    <div class="counter-display" id="counterView">Count: 0</div>
+    <button id="debugBtn">Trigger Script Logic</button>
+</div>
+
+<script>
+    const debugBtn = document.getElementById('debugBtn');
+    const counterView = document.getElementById('counterView');
+    
+    let clickCount = 0;
+
+    console.log("DevTools Lab Initialized. Task 2: This message confirms the script has loaded successfully!");
+
+    debugBtn.addEventListener('click', () => {
+        clickCount = clickCount + 1;
+        
+        let calculationTracker = clickCount * 5;
+        
+        console.log("Button clicked! Current raw count value:", clickCount);
+        console.log("Calculated tracking value (count * 5):", calculationTracker);
+        
+        counterView.textContent = "Count: " + calculationTracker;
+    });
+</script>
+
+</body>
+</html>
